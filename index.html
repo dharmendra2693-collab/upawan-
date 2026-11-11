@@ -1,154 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diet Well - Dietitian & Nutrition Clinic | www.upawan.in</title>
+<title>Upawan.in - Nursery & Diet Well</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,serif}
-body{background:#f0fdf4;color:#1a3a2a;text-align:center}
-.top{padding:20px 15px 10px;background:#dcfce7}
-.logo{width:130px;height:130px;border:3px solid #16a34a;border-radius:50%;object-fit:cover;display:block;margin:0 auto 10px;background:#fff}
-h1{font-size:30px;color:#15803d}
-.tag{font-size:11px;letter-spacing:3px;margin-top:3px;color:#16a34a;font-weight:bold}
-.nav{display:flex;gap:10px;justify-content:center;padding:15px;background:#f0fdf4;flex-wrap:wrap}
-.nav a{color:#15803d;border:1px solid #86efac;padding:8px 16px;border-radius:20px;text-decoration:none;font-size:14px;background:#fff}
-.btn{display:block;background:#16a34a;color:#fff;padding:14px;margin:15px 20px;border-radius:30px;font-weight:bold;text-decoration:none;font-size:17px}
-.section{padding:20px 15px;background:#f0fdf4}
-.section h2{font-size:26px;margin-bottom:8px;color:#15803d}
-.section p{color:#333;font-size:14px;line-height:1.6}
-.card{border:1px solid #bbf7d0;border-radius:15px;padding:15px;margin:12px 0;text-align:left;background:#fff}
-.card h3{font-size:19px;color:#15803d}
-.card .price{font-size:20px;color:#16a34a;margin:6px 0;font-weight:bold}
-.card p{font-size:13px}
-.card a{display:block;background:#16a34a;color:#fff;text-align:center;padding:11px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:10px}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
-.g-item{border:1px solid #bbf7d0;border-radius:10px;height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#dcfce7;padding:10px}
-.g-item span{font-size:32px}
-.g-item b{font-size:15px;color:#15803d;margin-top:6px}
-.g-item small{font-size:12px;color:#16a34a}
-.pkg{border:1px solid #bbf7d0;border-radius:15px;padding:20px;margin:15px 0;text-align:left;position:relative;background:#fff}
-.badge{position:absolute;top:-12px;right:15px;background:#16a34a;color:#fff;font-size:12px;font-weight:bold;padding:4px 10px;border-radius:20px}
-.pkg h3{font-size:21px;color:#15803d}
-.pkg .price{font-size:24px;color:#16a34a;margin:8px 0;font-weight:bold}
-.pkg ul{list-style:none;color:#333;font-size:14px;line-height:1.9;margin:10px 0}
-.social{display:flex;gap:10px;justify-content:center;padding:10px;flex-wrap:wrap}
-.social a{color:#fff;background:#16a34a;padding:10px 16px;border-radius:20px;text-decoration:none;font-weight:bold;font-size:14px}
-footer{padding:15px;font-size:13px;color:#555;border-top:1px solid #bbf7d0;line-height:1.6;background:#dcfce7}
-footer a{color:#15803d;text-decoration:none;font-weight:bold}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+:root{--green:#0b4d1e;--green2:#15803d;--gold:#c9a227}
+body{background:#eef7e6;color:#1a2e1a}
+a{text-decoration:none;color:inherit}
+header{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.topbar{max-width:1200px;margin:auto;display:flex;align-items:center;gap:14px;padding:10px 14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px}.logo-icon{width:52px;height:52px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;border:3px solid var(--gold)}
+.logo b{font-size:32px;color:var(--green);line-height:1}.logo span{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:700}
+.search{flex:1;min-width:200px;display:flex;background:#f3f7ed;border:1.5px solid #d8e8c8;border-radius:30px;overflow:hidden}
+.search input{flex:1;border:0;outline:0;padding:12px 14px;background:transparent;font-size:15px}
+.search button{background:var(--gold);border:0;padding:0 18px;font-size:18px;cursor:pointer}
+.icons{display:flex;gap:14px;font-size:22px}.cart{position:relative}.cart i{font-style:normal;background:#e11d48;color:#fff;font-size:12px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-8px;right:-8px}
+.tabs{max-width:1200px;margin:auto;display:flex;justify-content:center;gap:10px;padding:0 14px 12px;flex-wrap:wrap}
+.tab{border:1.5px solid var(--green2);padding:10px 20px;border-radius:30px;cursor:pointer;font-weight:700;background:#f0f7e8}
+.tab.active{background:var(--green);color:#fff}.tab.gold{background:var(--gold);border-color:var(--gold);color:#111}
+.hero{max-width:1200px;margin:14px auto;background:linear-gradient(90deg,#f7f3d8,#e8f5d6);border-radius:20px;display:flex;align-items:center;padding:28px;gap:20px}
+.hero-text{flex:1}.hero-text h1{font-size:44px;line-height:1.05;color:var(--green)}.hero-text h1 span{color:var(--gold)}
+.hero-text p{margin:12px 0;color:#444}.btn{background:var(--green);color:#fff;padding:12px 20px;border-radius:30px;display:inline-block;font-weight:700;border:0;cursor:pointer}
+.hero-img{flex:1;text-align:center;font-size:90px}.badges{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13px;font-weight:600}
+.section{max-width:1200px;margin:18px auto;padding:0 14px}.sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.sec-head h2{font-size:24px;color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.06);padding-bottom:12px}
+.card-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:72px;background:#f6f9ef;position:relative}
+.verified{position:absolute;top:10px;left:10px;background:var(--green2);color:#fff;font-size:11px;padding:4px 8px;border-radius:20px}
+.heart{position:absolute;top:8px;right:10px;font-size:20px;cursor:pointer}
+.card h3{padding:10px 12px 2px;font-size:17px;text-align:center}.card p{text-align:center;font-size:13px;color:#666}
+.pill{display:block;width:fit-content;margin:8px auto 0;background:var(--green);color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer}
+.dark{background:var(--green);color:#fff;border-radius:20px;padding:18px}.dark .sec-head h2{color:#fff}.dark .sec-head span{background:var(--gold);color:#111;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.price{color:var(--green2);font-weight:800}
+/* SELLER FORM */
+.seller-box{background:#fff;border:2px solid var(--gold);border-radius:20px;padding:22px;max-width:1200px;margin:18px auto;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.seller-box h2{grid-column:1/-1;color:var(--green);font-size:26px}.seller-box p{grid-column:1/-1;color:#555}
+.seller-box input,.seller-box select,.seller-box textarea{width:100%;padding:13px;border:1.5px solid #d8e8c8;border-radius:12px;font-size:15px;outline:0}
+.seller-box input:focus{border-color:var(--green2)}.seller-box label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+.full{grid-column:1/-1}.submit-btn{background:var(--green);color:#fff;border:0;padding:15px;border-radius:30px;font-size:17px;font-weight:800;cursor:pointer;width:100%}
+.note{background:#fff7d6;padding:12px;border-radius:12px;font-size:14px}
+footer{background:#0b2e15;color:#fff;margin-top:22px;padding:24px 14px;text-align:center}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
+.footer-grid h3{margin-bottom:8px;color:var(--gold)}
+.wa-btn{display:inline-block;background:#25D366;color:#fff;padding:12px 18px;border-radius:30px;font-weight:800;margin:6px}
+.insta-btn{display:inline-block;background:#E1306C;color:#fff;padding:12px 18px;border-radius:30px;font-weight:800;margin:6px}
+.bottom-nav{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);background:#fff;border-radius:30px;box-shadow:0 6px 20px rgba(0,0,0,.18);display:flex;gap:6px;padding:8px 12px;z-index:200}
+.bottom-nav button{border:0;background:transparent;padding:8px 14px;border-radius:20px;font-weight:700;cursor:pointer}
+.bottom-nav button.active{background:var(--green);color:#fff}
+.hidden{display:none!important}
+@media(max-width:768px){.hero{flex-direction:column;text-align:center}.hero-text h1{font-size:34px}.grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}.seller-box{grid-template-columns:1fr}.search{order:3;width:100%}}
 </style>
 </head>
 <body>
-<div class="top">
-<img class="logo" src="logo.png" alt="Diet Well">
-<h1>Diet Well</h1>
-<div class="tag">DIETITIAN & NUTRITION CLINIC</div>
-<p style="margin-top:8px;font-size:13px;color:#333;">Eat Healthy • Live Healthy • Be Happy - By Upawan</p>
+
+<header>
+<div class="topbar">
+<div class="logo"><div class="logo-icon">🌿</div><div><b>Upawan</b><br><span>UPAWAN.IN • GROW GREEN</span></div></div>
+<div class="search"><input id="searchInput" placeholder="Search plants, nurseries, diet plans..."><button onclick="doSearch()">🔍</button></div>
+<div class="icons"><span>🔍</span><span class="cart">🛒<i id="cartCount">2</i></span><span>👤</span></div>
 </div>
-<div class="nav">
-<a href="#">Home</a>
-<a href="#plans">Diet Plans</a>
-<a href="https://wa.me/919450626249">Book Now</a>
+<div class="tabs">
+<button class="tab active" id="tabNursery" onclick="showSection('nursery')">🌿 Nursery</button>
+<button class="tab" id="tabDiet" onclick="showSection('diet')">🥗 Diet Well</button>
+<button class="tab gold" onclick="showSection('seller')">🏪 Become Seller / Nursery Join</button>
 </div>
-<a class="btn" href="https://wa.me/919450626249?text=Hi Diet Well, I want to book diet consultation">Book on WhatsApp</a>
+</header>
+
+<!-- NURSERY -->
+<div id="nurserySection">
+<div class="hero"><div class="hero-text"><h1>Grow Green<br><span>with Upawan</span></h1><p>Premium Nursery Plants • Verified Nurseries • Gardening Essentials</p><button class="btn" onclick="scrollToId('nurseryList')">Explore Nursery Plants →</button><div class="badges"><span>✅ 100% Healthy Plants</span><span>🌱 Expert Gardeners</span><span>🚚 Pan-India Delivery</span></div></div><div class="hero-img">🪴🌳🌼🌵</div></div>
+<div class="section"><div class="sec-head"><h2>🌿 Popular Plant Categories</h2><span>View All →</span></div>
+<div class="grid">
+<div class="card"><div class="card-img">🪴<span class="heart" onclick="like(this)">♡</span></div><h3>Indoor Plants</h3><p>Air Purifying • Low Light</p><span class="pill" onclick="addCart()">Shop Now →</span></div>
+<div class="card"><div class="card-img">🌸🌼<span class="heart" onclick="like(this)">♡</span></div><h3>Flowering Plants</h3><p>Vibrant Blooms • Seasonal</p><span class="pill" onclick="addCart()">Shop Now →</span></div>
+<div class="card"><div class="card-img">🥭🌱<span class="heart" onclick="like(this)">♡</span></div><h3>Fruit Saplings</h3><p>Homegrown • Organic</p><span class="pill" onclick="addCart()">Shop Now →</span></div>
+<div class="card"><div class="card-img">🌳<span class="heart" onclick="like(this)">♡</span></div><h3>Bonsai & Decorative</h3><p>Mini Bonsai • Decor</p><span class="pill" onclick="addCart()">Shop Now →</span></div>
+</div></div>
+<div class="section dark" id="nurseryList"><div class="sec-head"><h2>✅ Verified Nurseries</h2><span>★ Safe Delivery | Quality Assured</span></div><p style="margin-bottom:14px">Trusted by 30,000+ Happy Plant Parents</p>
+<div class="grid">
+<div class="card"><div class="card-img">🌿🌿<span class="verified">✓ Verified</span></div><h3>GreenLeaf Nursery, Pune</h3><p>⭐ 4.6 (1200+) • ₹120/Plant<br>Indoor & Outdoor • 24-48hr</p><span class="pill" onclick="openWA('GreenLeaf Nursery Pune')">🛒 Shop Now</span></div>
+<div class="card"><div class="card-img">🌺<span class="verified">✓ Verified</span></div><h3>Vrindavan Nursery, Delhi</h3><p>⭐ 4.5 (950+) • ₹100/Plant<br>Flowering & Bonsai • Free Delivery</p><span class="pill" onclick="openWA('Vrindavan Nursery Delhi')">🛒 Shop Now</span></div>
+<div class="card"><div class="card-img">🌷<span class="verified">✓ Verified</span></div><h3>Bloom Valley, Bengaluru</h3><p>⭐ 4.4 (620+) • ₹149/Plant<br>Flowering • Free Delivery</p><span class="pill" onclick="openWA('Bloom Valley Bengaluru')">🛒 Shop Now</span></div>
+<div class="card"><div class="card-img">🥭<span class="verified">✓ Verified</span></div><h3>Mango Nursery, Lucknow</h3><p>⭐ 4.6 (740+) • ₹199/Sapling<br>Fruit Saplings • Free Delivery</p><span class="pill" onclick="openWA('Mango Nursery Lucknow')">🛒 Shop Now</span></div>
+</div></div>
+<div class="section"><div class="sec-head"><h2>🔥 Best Selling Plants</h2></div>
+<div class="grid">
+<div class="card"><div class="card-img">🌿</div><h3>Hibiscus Plant</h3><p><span class="price">₹349</span> <del>₹499</del><br>⭐ 4.4 (980)</p><span class="pill" onclick="openWA('Hibiscus Rs 349')">Buy on WhatsApp</span></div>
+<div class="card"><div class="card-img">🥭</div><h3>Mango Sapling</h3><p><span class="price">₹599</span> <del>₹799</del><br>⭐ 4.6 (740)</p><span class="pill" onclick="openWA('Mango Rs 599')">Buy on WhatsApp</span></div>
+<div class="card"><div class="card-img">🌳</div><h3>Bonsai Ficus</h3><p><span class="price">₹899</span> <del>₹1,199</del><br>⭐ 4.7 (520)</p><span class="pill" onclick="openWA('Bonsai Rs 899')">Buy on WhatsApp</span></div>
+<div class="card"><div class="card-img">🪴</div><h3>Money Plant</h3><p><span class="price">₹199</span> <del>₹299</del><br>⭐ 4.8 (2100)</p><span class="pill" onclick="openWA('Money Plant Rs 199')">Buy on WhatsApp</span></div>
+</div></div>
+</div>
+
+<!-- DIET WELL -->
+<div id="dietSection" class="hidden">
+<div class="hero"><div class="hero-text"><h1>Healthy Diet Plans<br><span>for a Healthier You</span></h1><p>Expert curated diet plans, nutrition advice & healthy meals.</p><button class="btn" onclick="scrollToId('dietList')">Explore Diet Plans →</button><div class="badges"><span>✅ 100% Safe</span><span>👩‍⚕️ Expert Nutritionists</span><span>🥗 Personalized Plans</span></div></div><div class="hero-img">🥗🥦🥑</div></div>
+<div class="section"><div class="sec-head"><h2>🥗 Popular Diet Categories</h2><span>View All →</span></div>
+<div class="grid">
+<div class="card"><div class="card-img">🥗</div><h3>Weight Loss Diet</h3><p>Calorie-balanced meals</p><span class="pill" onclick="openWA('Weight Loss Diet')">Book Consultation</span></div>
+<div class="card"><div class="card-img">🥦</div><h3>Diabetes Diet</h3><p>Blood sugar friendly</p><span class="pill" onclick="openWA('Diabetes Diet')">Book Consultation</span></div>
+<div class="card"><div class="card-img">🫐</div><h3>PCOS Diet</h3><p>Hormonal balance</p><span class="pill" onclick="openWA('PCOS Diet')">Book Consultation</span></div>
+<div class="card"><div class="card-img">🍊</div><h3>Immunity Boost</h3><p>Stronger Immunity</p><span class="pill" onclick="openWA('Immunity Diet')">Book Consultation</span></div>
+</div></div>
+<div class="section dark" id="dietList"><div class="sec-head"><h2>✅ Verified Diet Plans</h2><span>★ Safe Payments</span></div><p style="margin-bottom:14px">Trusted by 50,000+ Happy Customers</p>
+<div class="grid">
+<div class="card"><div class="card-img">🥗</div><h3>Weight Loss - 7 Days</h3><p>⭐ 4.6 (1800+) • <b>₹899/Plan</b></p><span class="pill" onclick="openWA('Weight Loss 7 Days Rs 899')">📅 Book Consultation</span></div>
+<div class="card"><div class="card-img">🥦</div><h3>Diabetes Care - 14 Days</h3><p>⭐ 4.5 (1200+) • <b>₹999/Plan</b></p><span class="pill" onclick="openWA('Diabetes 14 Days Rs 999')">📅 Book Consultation</span></div>
+<div class="card"><div class="card-img">🫐</div><h3>PCOS Care - 30 Days</h3><p>⭐ 4.7 (900+) • <b>₹1499/Plan</b></p><span class="pill" onclick="openWA('PCOS 30 Days')">📅 Book Consultation</span></div>
+<div class="card"><div class="card-img">🍋</div><h3>Immunity + Gut</h3><p>⭐ 4.8 (1500+) • <b>₹799/Plan</b></p><span class="pill" onclick="openWA('Immunity Plan Rs 799')">📅 Book Consultation</span></div>
+</div></div>
+</div>
+
+<!-- SELLER JOIN FORM -->
+<div id="sellerSection" class="hidden">
 <div class="section">
-<h2>Weight Loss Without Starving</h2>
-<p>Customised Diet Plan for your Body, Lifestyle & Taste. No Crash Diet, No Medicine - Only Healthy & Tasty Food.</p>
-<a class="btn" href="https://wa.me/919450626249">Get Free Consultation</a>
-</div>
-<div class="section" id="plans">
-<h2>Our Diet Services</h2>
-<div class="card">
-<h3>⚖️ Weight Loss Diet</h3>
-<div class="price">Starting at Rs. 999 / Month</div>
-<p>Fat Loss, Belly Fat, Post-Pregnancy Weight Loss</p>
-<a href="https://wa.me/919455457958?text=Hi, I want Weight Loss Diet Plan">Book Weight Loss</a>
-</div>
-<div class="card">
-<h3>💪 Weight Gain / Muscle Gain</h3>
-<div class="price">Starting at Rs. 999 / Month</div>
-<p>Healthy Weight Gain, Muscle Building Diet for Boys & Girls</p>
-<a href="https://wa.me/919455457958?text=Hi, I want Weight Gain Diet Plan">Book Weight Gain</a>
-</div>
-<div class="card">
-<h3>🩸 Diabetes / BP / Thyroid Diet</h3>
-<div class="price">Starting at Rs. 1,499 / Month</div>
-<p>Sugar Control, BP Control, Thyroid & PCOS Diet Plan</p>
-<a href="https://wa.me/919455457958?text=Hi, I want Diabetes Diet Plan">Book Health Diet</a>
-</div>
-<div class="card">
-<h3>👩 PCOS / Hormonal Diet</h3>
-<div class="price">Starting at Rs. 1,499 / Month</div>
-<p>PCOS, Irregular Periods, Hormonal Imbalance Diet</p>
-<a href="https://wa.me/919455457958?text=Hi, I want PCOS Diet Plan">Book PCOS Diet</a>
+<form class="seller-box" onsubmit="submitSeller(event)">
+<h2>🏪 Become Seller - Apni Nursery Upawan par Jodo</h2>
+<p>Form bharo, hum 24 घंटे में WhatsApp पर Verification ke liye call karenge. Listing FREE hai, sirf Order par 15% Commission lagega.</p>
+<div><label>Apna Naam *</label><input id="sName" required placeholder="Jaise - Ramesh Kumar"></div>
+<div><label>Nursery ka Naam *</label><input id="sNursery" required placeholder="Jaise - GreenLeaf Nursery"></div>
+<div><label>Mobile Number *</label><input id="sPhone" required type="tel" placeholder="94555xxxxx"></div>
+<div><label>WhatsApp Number</label><input id="sWA" placeholder="94555xxxxx"></div>
+<div><label>City / State *</label><input id="sCity" required placeholder="Pune, Maharashtra"></div>
+<div><label>Kis Type ke Plants Bechte Ho? *</label><select id="sType"><option>Indoor Plants</option><option>Flowering Plants</option><option>Fruit Saplings</option><option>Bonsai</option><option>Medicinal / Herbs</option><option>Sab Kuch</option></select></div>
+<div><label>Roz Kitne Plants Bhej Sakte Ho?</label><select id="sQty"><option>10-20 / Day</option><option>20-50 / Day</option><option>50-100 / Day</option><option>100+ / Day</option></select></div>
+<div><label>Delivery Karte Ho?</label><select id="sDel"><option>Haan - Pan India</option><option>Haan - Apne City me hi</option><option>Nahi - Pickup Only</option></select></div>
+<div class="full"><label>Apni Nursery ke baare me likho</label><textarea id="sAbout" rows="3" placeholder="Kitne saal se nursery hai, kya special hai..."></textarea></div>
+<div class="full note">✅ Verified Badge ke liye Nursery ka Video / Photo chahiye hoga. Hum WhatsApp par mangenge.<br>✅ Paise: Customer se payment Upawan lega, har hafte aapke account me settlement hoga.</div>
+<div class="full"><button class="submit-btn" type="submit">🚀 Join as Seller - WhatsApp par Bhejo →</button></div>
+<div class="full" style="text-align:center">Ya seedha WhatsApp karo: <b>9455457958</b> / <b>9451619692</b> • Instagram: <b>@upawanofficial</b></div>
+</form>
 </div>
 </div>
-<div class="section">
-<h2>Why Choose Diet Well?</h2>
-<p>✅ Personalised Diet Chart - No Copy Paste<br>✅ Indian Home Food - Roti, Sabzi, Dal, Chawal<br>✅ Daily WhatsApp Support<br>✅ Weekly Weight Check & Plan Update</p>
-</div>
-<div class="section">
-<h2>What You Will Get?</h2>
-<div class="gallery">
-<div class="g-item"><span>🥦</span><b>Custom Diet Chart</b><small>7 Days Plan</small></div>
-<div class="g-item"><span>📱</span><b>WhatsApp Support</b><small>Daily Guidance</small></div>
-<div class="g-item"><span>🏋️</span><b>Workout Plan</b><small>Home Workout</small></div>
-<div class="g-item"><span>📊</span><b>Progress Tracking</b><small>Weekly Check</small></div>
-<div class="g-item"><span>🍲</span><b>Indian Recipes</b><small>Tasty & Healthy</small></div>
-<div class="g-item"><span>🧘</span><b>Lifestyle Tips</b><small>Sleep & Stress</small></div>
-</div>
-</div>
-<div class="section">
-<h2>Diet Packages</h2>
-<p>Simple Plans - No Hidden Charges</p>
-<div class="pkg">
-<h3>1 Month Starter</h3>
-<div class="price">Rs. 999</div>
-<ul>
-<li>✅ 1 Month Personal Diet Chart</li>
-<li>✅ WhatsApp Support</li>
-<li>✅ 1 Time Diet Update</li>
-<li>✅ Workout Guidance</li>
-</ul>
-<a href="https://wa.me/919455457958?text=Hi, I want 1 Month Diet Plan Rs 999" style="display:block;background:#16a34a;color:#fff;text-align:center;padding:12px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:10px">Book Starter - WhatsApp</a>
-</div>
-<div class="pkg">
-<div class="badge">MOST POPULAR</div>
-<h3>3 Months Transformation</h3>
-<div class="price">Rs. 2,499</div>
-<ul>
-<li>✅ 3 Months Personal Diet Chart</li>
-<li>✅ Weekly Weight Check</li>
-<li>✅ Daily WhatsApp Support</li>
-<li>✅ Workout + Recipes</li>
-<li>✅ Cheat Meal Guidance</li>
-</ul>
-<a href="https://wa.me/919455457958?text=Hi, I want 3 Months Transformation Plan Rs 2499" style="display:block;background:#16a34a;color:#fff;text-align:center;padding:12px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:10px">Book Transformation - WhatsApp</a>
-</div>
-<div class="pkg">
-<h3>6 Months Full Change</h3>
-<div class="price">Rs. 4,499</div>
-<ul>
-<li>✅ 6 Months Full Support</li>
-<li>✅ All Health Issues Covered</li>
-<li>✅ Family Diet Guidance</li>
-<li>✅ Lifetime Maintenance Tips</li>
-</ul>
-<a href="https://wa.me/919455457958?text=Hi, I want 6 Months Diet Plan Rs 4499" style="display:block;background:#16a34a;color:#fff;text-align:center;padding:12px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:10px">Book 6 Months - WhatsApp</a>
-</div>
-</div>
-<a class="btn" href="https://wa.me/919455457958">Book on WhatsApp - 9455457958</a>
-<div class="section">
-<h2>Follow Us</h2>
-<div class="social">
-<a href="https://instagram.com/upawan.in">Instagram</a>
-<a href="https://wa.me/919455457958">WhatsApp</a>
-<a href="https://www.upawan.in">www.upawan.in</a>
-</div>
-</div>
+
 <footer>
-Copyright 2026 Diet Well - All Rights Reserved<br>
-<a href="https://www.upawan.in">www.upawan.in</a> - Diet Well by Upawan
+<div class="footer-grid">
+<div><h3>Upawan.in</h3><p>India ki Sabse Badi Nursery Bazaar + Diet Well.<br>Grow Green, Eat Well, Live Well.</p></div>
+<div><h3>Contact Us</h3><p>WhatsApp: 9455457958<br>WhatsApp: 9451619692<br>Instagram: @upawanofficial<br>Website: www.upawan.in</p></div>
+<div><h3>Quick Links</h3><p>Nursery • Diet Well • Become Seller<br>Track Order • Offers • Help • Care Tips</p></div>
+</div>
+<br>
+<a class="wa-btn" href="https://wa.me/919455457958?text=Hi%20Upawan!%20Mujhe%20plants%20chahiye" target="_blank">💬 WhatsApp 1 - 9455457958</a>
+<a class="wa-btn" href="https://wa.me/919451619692?text=Hi%20Upawan!%20Mujhe%20diet%20plan%20chahiye" target="_blank">💬 WhatsApp 2 - 9451619692</a>
+<a class="insta-btn" href="https://instagram.com/upawanofficial" target="_blank">📸 Instagram @upawanofficial</a>
+<p style="margin-top:14px;font-size:13px;opacity:.8">© 2026 Upawan.in • Trusted by 50,000+ Plant Lovers • Safe Payments • Quality Assured</p>
 </footer>
+<div style="height:70px"></div>
+<div class="bottom-nav">
+<button class="active" onclick="showSection('nursery');setNav(this)">🏠 Home</button>
+<button onclick="showSection('nursery');setNav(this)">🌿 Plants</button>
+<button onclick="showSection('seller');setNav(this)">🏪 Seller</button>
+<button onclick="showSection('diet');setNav(this)">💚 Diet</button>
+<button onclick="openWA('Profile Help')">👤 Profile</button>
+</div>
+
+<script>
+let cart=2;
+function showSection(type){
+['nursery','diet','seller'].forEach(t=>document.getElementById(t+'Section').classList.toggle('hidden',t!==type));
+document.getElementById('tabNursery').classList.toggle('active',type==='nursery');
+document.getElementById('tabDiet').classList.toggle('active',type==='diet');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+function setNav(el){document.querySelectorAll('.bottom-nav button').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+function like(el){el.textContent=el.textContent==='♡'?'♥':'♡';el.style.color=el.textContent==='♥'?'red':''}
+function addCart(){cart++;document.getElementById('cartCount').textContent=cart;alert('Added to Cart! Total: '+cart)}
+function openWA(item){window.open('https://wa.me/919455457958?text='+encodeURIComponent('Hi Upawan! Mujhe chahiye: '+item),'_blank')}
+function doSearch(){let q=document.getElementById('searchInput').value;if(!q){alert('Kya search karna hai?');return}if(q.toLowerCase().includes('diet')||q.toLowerCase().includes('weight')||q.toLowerCase().includes('diabetes')||q.toLowerCase().includes('pcos')){showSection('diet')}else{showSection('nursery')}alert('Search: '+q)}
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function submitSeller(e){
+e.preventDefault();
+let msg='NEW SELLER JOIN - UPAWAN\n\nNaam: '+document.getElementById('sName').value+'\nNursery: '+document.getElementById('sNursery').value+'\nMobile: '+document.getElementById('sPhone').value+'\nWhatsApp: '+document.getElementById('sWA').value+'\nCity: '+document.getElementById('sCity').value+'\nPlant Type: '+document.getElementById('sType').value+'\nQuantity: '+document.getElementById('sQty').value+'\nDelivery: '+document.getElementById('sDel').value+'\nAbout: '+document.getElementById('sAbout').value;
+window.open('https://wa.me/919455457958?text='+encodeURIComponent(msg),'_blank');
+alert('Dhanyavaad! Aapki details WhatsApp par bhej di gayi. Hum 24 ghante me call karenge.');
+}
+</script>
 </body>
 </html>
